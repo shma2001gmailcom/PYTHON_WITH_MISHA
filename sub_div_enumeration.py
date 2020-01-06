@@ -1,38 +1,39 @@
-def sub_enum(n, a):
+def presentations_enum(int_to_present, components):
     answer = [[]]
-    if n == 0:
+    if int_to_present == 0:
         return answer
-    for offset in range(0, len(a)):
-        less_n = n - a[offset]
-        if less_n >= 0:
-            for x in sub_enum(less_n, a):
-                x.append(a[offset])
+    for offset in range(0, len(components)):
+        less_number = int_to_present - components[offset]
+        if less_number >= 0:
+            for x in presentations_enum(less_number, components):
+                x.append(components[offset])
                 answer.append(x)
     return answer
 
 
 def check_sum(array, pattern):
-    s = 0
+    aggregate = 0
     for e in array:
-        s += e
-    return s == pattern
+        aggregate += e
+    return aggregate == pattern
 
 
-def presentation_to_string(integer_to_present, x):
+def presentation_to_string(integer_to_present, presentation_array):
     result = str(integer_to_present) + '='
-    for j in range(0, len(x)):
+    for j in range(0, len(presentation_array)):
         if j == 0:
-            result += str(x[j])
+            result += str(presentation_array[j])
         else:
-            result += '+' + str(x[j])
+            result += '+' + str(presentation_array[j])
     return result
 
 
 def main():
-    for integer_to_present in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]:
+    components = [2, 3, 5, 7]
+    for integer_to_present in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]:
         print()
-        print("presentations of " + str(integer_to_present) + ' as a sum of 2, 3, 5, 7:')
-        for x in sub_enum(integer_to_present, [2, 3, 5, 7]):
+        print("presentations of " + str(integer_to_present) + ' as a sum of ' + str(components) + ':')
+        for x in presentations_enum(integer_to_present, [2, 3, 5, 7]):
             if check_sum(x, integer_to_present):
                 print(presentation_to_string(integer_to_present, x))
 
