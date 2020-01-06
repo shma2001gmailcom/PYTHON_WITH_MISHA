@@ -29,10 +29,10 @@ def presentation_to_string(integer_to_present, x):
 
 
 def main():
-    for integer_to_present in [1, 2, 3, 4, 5, 6]:
+    for integer_to_present in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]:
         print()
-        print("presentations of " + str(integer_to_present) + ' as a sum of 1, 2, 3:')
-        for x in sub_enum(integer_to_present, [1, 2, 3]):
+        print("presentations of " + str(integer_to_present) + ' as a sum of 2, 3, 5, 7:')
+        for x in sub_enum(integer_to_present, [2, 3, 5, 7]):
             if check_sum(x, integer_to_present):
                 print(presentation_to_string(integer_to_present, x))
 
