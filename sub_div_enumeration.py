@@ -18,7 +18,7 @@ def check_sum(array, pattern):  # checks if sum of array elements is equals to '
     return aggregate == pattern
 
 
-def presentation_to_string(integer_to_present, presentation_array):  #  presentation (1, 1) to string (2=1+1)
+def presentation_to_string(integer_to_present, presentation_array):  # presentation (1, 1) to string (2=1+1)
     result = str(integer_to_present) + '='
     for j in range(0, len(presentation_array)):
         if j == 0:
