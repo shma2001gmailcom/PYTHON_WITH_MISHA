@@ -2,9 +2,9 @@ def presentations_enum(int_to_present, components):
     answer = [[]]
     if int_to_present == 0:
         return answer
-    for offset in range(0, len(components)): # for each components
+    for offset in range(0, len(components)):  # for each components
         less_number = int_to_present - components[offset]  # subtract one of the components for recursion
-        if less_number >= 0: # consider only non-negative reductions
+        if less_number >= 0:  # consider only non-negative reductions
             for presentations_of_less_number in presentations_enum(less_number, components):  # recursion
                 presentations_of_less_number.append(components[offset])  # obtain new representation from old one
                 answer.append(presentations_of_less_number)  # add new representation to result
