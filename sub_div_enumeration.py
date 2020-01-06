@@ -30,7 +30,7 @@ def presentation_to_string(integer_to_present, presentation_array):
 
 def main():
     components = [2, 3, 5, 7]
-    for integer_to_present in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]:
+    for integer_to_present in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]:
         print()
         print("presentations of " + str(integer_to_present) + ' as a sum of ' + str(components) + ':')
         for x in presentations_enum(integer_to_present, [2, 3, 5, 7]):
