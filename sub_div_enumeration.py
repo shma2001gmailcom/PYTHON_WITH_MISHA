@@ -35,10 +35,10 @@ def print_representations(integer_to_present, components):
 
 
 def main():
+    print('\n\nTrace how the following representations are obtained from the previous ones!')
     components = [2, 3, 5, 7]
     for integer_to_present in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]:
-        print()
-        print("presentations of " + str(integer_to_present) + ' as a sum of ' + str(components) + ':')
+        print("\n\npresentations of " + str(integer_to_present) + ' as a sum of ' + str(components) + ':')
         print_representations(integer_to_present, components)
 
 
